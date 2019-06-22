@@ -54,6 +54,7 @@ features <- read.table("./Project Data/UCI HAR Dataset/features.txt", header = F
 ```
 
 **Reading the Train Files**
+
 These files are under the train directory and provides the following information: 
 - train/X_train.txt: Training set (the variables).
 - train/y_train.txt: Training labels.
