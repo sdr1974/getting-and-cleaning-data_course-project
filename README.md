@@ -46,6 +46,7 @@ if(!file.exists("./Project Data/Dataset")) {unzip("./Project Data/Dataset.zip", 
 ```
 
 **Using the Features File to Extract the Variable Names**
+
 The *features* TXT file contains the names of the variables (as indicated in the downloaded README.txt file). We will use the features later to rename the columns of our datasets. You can read this information in the Codebook and also in the TXT file named *features.info.txt* 
 
 ```
@@ -65,6 +66,7 @@ x_train <- read.table ("./Project Data/UCI HAR Dataset/train/x_train.txt", heade
 ```
 
 **Asigning the Names to Columns**
+
 Now we will used the information provided by *features* to rename the columns
 
 ```
@@ -72,6 +74,7 @@ colnames(x_train) <- features$V2
 ```
 
 **Creating the Train DataFrame**
+
 Now that we've read the files containing all the information about the train trial, we can put it together
 
 ```
@@ -79,6 +82,7 @@ train <- cbind(subject_train, activity_train, x_train)
 ```
 
 **Reading the Test Files**
+
 This is basically the same procedure used for the *train files*. These files are the test directory and provides the following info:
 - test/X_test.txt: Testing set (the variables).
 - test/y_test.txt: test labels.
@@ -91,6 +95,7 @@ x_test <-  read.table ("./Project Data/UCI HAR Dataset/test/x_test.txt", header 
 ```
 
 **Asigning the Names to Columns**
+
 Now we will used the information provided by *features* to rename the columns
 
 ```
@@ -98,6 +103,7 @@ colnames(x_test) <- features$V2
 ```
 
 **Creating the Test DataFrame**
+
 Now that we've read the files containing all the information about the test trial, we can put it together
 
 ```
@@ -105,6 +111,7 @@ test <- cbind(subject_test, activity_test, x_test)
 ```
 
 **Merging the Train and Test DataFrames**
+
 I will call the merged data frame as DF (just for simplicity)
 
 ```
@@ -124,6 +131,7 @@ levels(DF2$activity) <- activity_labels
 ```
 
 **Creating a Second Tidy Data with Averages**
+
 In this step we need to calculate the average for the variables in the DF2 for each subject and each activity
 
 ```
